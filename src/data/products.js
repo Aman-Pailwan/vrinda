@@ -1,8 +1,3 @@
-const baseUrl = import.meta.env.BASE_URL || './';
-
-// Normalize base URL trailing slash
-const cleanBaseUrl = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
-
 export const PRODUCTS = [
   {
     id: "vrinda-01",
@@ -10,7 +5,7 @@ export const PRODUCTS = [
     category: "Candle Bouquets",
     price: 1899,
     originalPrice: 2299,
-    image: `${cleanBaseUrl}images/signature-tulip-bouquet.jpeg`,
+    image: "./images/signature-tulip-bouquet.jpeg",
     scentFamily: "Floral & Fresh",
     burnTime: "40-45 Hours",
     weight: "380g",
@@ -39,7 +34,7 @@ export const PRODUCTS = [
     category: "Vase Arrangements",
     price: 1699,
     originalPrice: 1999,
-    image: `${cleanBaseUrl}images/lavender-bloom-vase.jpeg`,
+    image: "./images/lavender-bloom-vase.jpeg",
     scentFamily: "Relaxing Herbal",
     burnTime: "50+ Hours",
     weight: "420g",
@@ -68,7 +63,7 @@ export const PRODUCTS = [
     category: "Vase Arrangements",
     price: 1599,
     originalPrice: 1849,
-    image: `${cleanBaseUrl}images/tulip-elegance-vase.jpeg`,
+    image: "./images/tulip-elegance-vase.jpeg",
     scentFamily: "Sweet Floral & Citrus",
     burnTime: "45+ Hours",
     weight: "390g",
@@ -97,7 +92,7 @@ export const PRODUCTS = [
     category: "Vase Arrangements",
     price: 1499,
     originalPrice: 1750,
-    image: `${cleanBaseUrl}images/classic-rose-blossom-vase.jpeg`,
+    image: "./images/classic-rose-blossom-vase.jpeg",
     scentFamily: "Romantic Rose & Amber",
     burnTime: "48+ Hours",
     weight: "400g",
@@ -125,7 +120,7 @@ export const PRODUCTS = [
     category: "Gift Sets",
     price: 2199,
     originalPrice: 2599,
-    image: `${cleanBaseUrl}images/luxury-rose-bloom-gift-box.jpeg`,
+    image: "./images/luxury-rose-bloom-gift-box.jpeg",
     scentFamily: "Warm Vanilla & Rose",
     burnTime: "30+ Hours per Candle (120+ Total)",
     weight: "520g Total",
