@@ -1,4 +1,4 @@
-# VRINDA - Handcrafted Botanical Candle Catalog & GitHub Pages Site
+# VRINDA - Handcrafted Botanical Candle Catalog & GitHub Pages Site 
 
 Welcome to the official product catalog web application for **VRINDA** (Artisanal Handcrafted Botanical & Floral Wax Candles).
 
