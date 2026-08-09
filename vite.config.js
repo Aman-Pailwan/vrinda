@@ -8,7 +8,10 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
-  base: './',
+  // Dynamically resolve base path for GitHub Pages subpath deployment
+  base: process.env.GITHUB_REPOSITORY
+    ? `/${process.env.GITHUB_REPOSITORY.split('/')[1]}/`
+    : './',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
