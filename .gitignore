@@ -3,3 +3,11 @@ node_modules
 dist
 dist-ssr
 *.local
+
+# Temporary extracted PDF folder & raw catalog files
+pdf_extracted/
+CATALOGUE.pdf
+public/CATALOGUE.pdf
+WhatsApp Image *
+WhatsApp Image *.jpeg
+WhatsApp Image *.jpg
