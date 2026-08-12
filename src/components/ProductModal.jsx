@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { 
-  X, Flame, Sparkles, MessageCircle, ShoppingBag, 
+  X, Sparkles, MessageCircle, ShoppingBag, 
   Layers, Package, CheckCircle2, Palette, Droplets
 } from 'lucide-react';
 import { FRAGRANCES, AVAILABLE_COLORS, STUDIO_INFO } from '../data/products';
@@ -12,6 +12,8 @@ export default function ProductModal({ product, onClose, onAddToCart, isAdded })
 
   if (!product) return null;
 
+  const imageSrc = product.image ? product.image.replace(/^\.\//, '') : '';
+
   const handleWhatsAppOrder = () => {
     const message = `Hi Vrinda! I'm interested in ordering:
 *Product:* ${product.name}
@@ -20,7 +22,6 @@ export default function ProductModal({ product, onClose, onAddToCart, isAdded })
 *Selected Fragrance:* ${selectedFragrance}
 *Preferred Colour:* ${selectedColor}
 *Category:* ${product.category}
-*Burn Time:* ${product.burnTime}
 
 Could you please share availability and delivery details? Thank you!`;
     
@@ -47,7 +48,7 @@ Could you please share availability and delivery details? Thank you!`;
         {/* Left Section: Image Showcase */}
         <div className="md:w-1/2 bg-[#FAF7F2] relative min-h-[300px] md:min-h-full flex items-center justify-center p-4 sm:p-6">
           <img
-            src={product.image}
+            src={imageSrc}
             alt={product.name}
             className="w-full h-full max-h-[480px] object-cover rounded-2xl shadow-md border border-[#EBE4DA]"
           />
@@ -140,21 +141,11 @@ Could you please share availability and delivery details? Thank you!`;
             </div>
 
             {/* Specs Grid */}
-            <div className="grid grid-cols-2 gap-3 text-xs">
-              <div className="p-3 bg-[#FAF7F2] rounded-xl border border-[#EBE4DA] flex items-start gap-2">
-                <Layers className="w-4 h-4 text-[#C5A059] shrink-0 mt-0.5" />
-                <div>
-                  <span className="text-[#8E8781] block text-[10px] uppercase font-semibold">Vessel / Wrap</span>
-                  <span className="font-medium text-[#2C2A29] leading-tight block mt-0.5">{product.vessel}</span>
-                </div>
-              </div>
-
-              <div className="p-3 bg-[#FAF7F2] rounded-xl border border-[#EBE4DA] flex items-start gap-2">
-                <Package className="w-4 h-4 text-[#9E4770] shrink-0 mt-0.5" />
-                <div>
-                  <span className="text-[#8E8781] block text-[10px] uppercase font-semibold">Burn Time</span>
-                  <span className="font-medium text-[#2C2A29] leading-tight block mt-0.5">{product.burnTime}</span>
-                </div>
+            <div className="p-3 bg-[#FAF7F2] rounded-xl border border-[#EBE4DA] flex items-start gap-2 text-xs">
+              <Layers className="w-4 h-4 text-[#C5A059] shrink-0 mt-0.5" />
+              <div>
+                <span className="text-[#8E8781] block text-[10px] uppercase font-semibold">Vessel / Wrap</span>
+                <span className="font-medium text-[#2C2A29] leading-tight block mt-0.5">{product.vessel}</span>
               </div>
             </div>
 
