@@ -1,145 +1,156 @@
+export const STUDIO_INFO = {
+  name: "VRINDA",
+  tagline: "Botanical Candle Studio",
+  about: "At Vrinda, we create handcrafted candles that bring together fragrance, artistry and thoughtful gifting. From delicate floral candles to elegant arrangements, every piece is thoughtfully made to add warmth to your space and meaning to your moments.",
+  instagram: "vrinda.candle.studio",
+  instagramUrl: "https://www.instagram.com/vrinda.candle.studio",
+  phone: "9049290907",
+  phoneMasked: "+91 90492 *****",
+  whatsappNumber: "919049290907",
+  location: "Kolhapur, Maharashtra",
+  colorsNote: "Custom colours available",
+  logoImage: "./images/vrinda-logo.jpeg"
+};
+
+export const FRAGRANCES = [
+  { name: "Saffron", note: "Warm Spice & Golden Exotic Bloom", family: "Exotic Spice" },
+  { name: "Vanilla", note: "Creamy Madagascar Bean & Warm Sugar", family: "Warm Sweet" },
+  { name: "Rose", note: "Damask Rose Petals & Morning Dew", family: "Classic Floral" },
+  { name: "Sandalwood", note: "Mystic Wood, Amber & Earthy Bark", family: "Woody & Earthy" },
+  { name: "Jasmine", note: "Night-Blooming Jasmine & Fresh Stems", family: "Fresh Floral" },
+  { name: "Jovan Musk", note: "Sensual Soft Velvet Musk", family: "Sensual Musk" },
+  { name: "Musk Wild", note: "Earthy Wild Botanicals & Sheer Musk", family: "Wild & Sheer" },
+  { name: "Orchid", note: "Exotic Blossom Nectar & Citrus Bloom", family: "Exotic Floral" },
+  { name: "Lemongrass", note: "Crisp Zesty Citrus & Uplifting Leaf", family: "Citrus & Herbal" },
+  { name: "Rose Musk", note: "Romantic Velvet Rose & Warm Musk", family: "Romantic Musk" }
+];
+
+export const AVAILABLE_COLORS = [
+  { name: "Blush Pink", hex: "#F4C2C2" },
+  { name: "Cream Ivory", hex: "#FFFDD0" },
+  { name: "Soft Mauve", hex: "#E0B0FF" },
+  { name: "Dusty Rose", hex: "#DCAE96" },
+  { name: "Sage Green", hex: "#9CAF88" },
+  { name: "Champagne Gold", hex: "#F7E7CE" }
+];
+
 export const PRODUCTS = [
   {
-    id: "vrinda-01",
-    name: "VRINDA Signature Wrapped Tulip Candle Bouquet",
+    id: "vrinda-cat-01",
+    name: "Tulip duet",
     category: "Candle Bouquets",
-    price: 1899,
-    originalPrice: 2299,
-    image: "./images/signature-tulip-bouquet.jpeg",
-    scentFamily: "Floral & Fresh",
-    burnTime: "40-45 Hours",
-    weight: "380g",
-    dimensions: "28cm H × 14cm W",
+    price: 149,
+    originalPrice: 199,
+    image: "./images/tulip-duet-bouquet.jpeg",
+    scentFamily: "Classic Floral",
+    defaultScent: "Rose",
+    burnTime: "30-35 Hours",
+    dimensions: "24cm H × 12cm W",
     rating: 5.0,
-    reviewsCount: 38,
+    reviewsCount: 48,
+    isCatalogueOfficial: true,
     isBestseller: true,
     fragrancePyramid: {
-      top: "Fresh Tulip Stems & White Tea",
-      heart: "Peony Petals & Jasmine Sambac",
+      top: "Fresh Tulip Stems & Dewy Rose",
+      heart: "Pink Tulip Petals & Jasmine",
       base: "Sheer Musk & Warm Amber"
     },
-    materials: "100% Organic Soy & Beeswax Blend, Organic Cotton Wick, Sheer Mesh Wrap, Satin Ribbon",
-    vessel: "Hand-wrapped Bouquet with Vrinda Signature Gold Tag",
-    occasions: ["Anniversaries", "Weddings", "Luxury Gifting", "Valentine's Day"],
-    description: "An exquisite centerpiece crafted for lovers of floral art. Features hand-sculpted wax tulip stems wrapped in delicate sheer tulle mesh with gold frame accents, completed with VRINDA's luxury signature crest tag.",
+    materials: "100% Handcrafted Botanical Soy & Beeswax Blend, Organic Wick, Sheer Net Wrap, Satin Bow",
+    vessel: "Hand-wrapped Bouquet with VRINDA Signature Tag",
+    occasions: ["Anniversaries", "Thoughtful Gifting", "Decor", "Return Gifts"],
+    description: "Two elegant tulip candles, thoughtfully crafted for beautiful décor and meaningful gifting.",
     careTips: [
-      "Trim wicks to 1/4 inch before lighting.",
-      "Place candle stems upright in a heat-resistant tray when burning.",
-      "Keep away from direct heat and sunlight when displayed as decor."
-    ]
-  },
-  {
-    id: "vrinda-02",
-    name: "Lavender & Rose Bloom Candle Vase",
-    category: "Vase Arrangements",
-    price: 1699,
-    originalPrice: 1999,
-    image: "./images/lavender-bloom-vase.jpeg",
-    scentFamily: "Relaxing Herbal",
-    burnTime: "50+ Hours",
-    weight: "420g",
-    dimensions: "18cm H × 12cm W",
-    rating: 4.9,
-    reviewsCount: 29,
-    isBestseller: false,
-    fragrancePyramid: {
-      top: "French Lavender & Eucalyptus",
-      heart: "Velvet Rose & Wild Violet",
-      base: "Creamy Vanilla & Cedarwood"
-    },
-    materials: "Natural Botanical Soy Wax, Dried Wheat Grass, Ribbed Ceramic Vase",
-    vessel: "White Ribbed Fluted Ceramic Vessel",
-    occasions: ["Home Decor", "Bedside Aromatherapy", "Housewarming"],
-    description: "A serene blend of soft purple rose wax blooms and ivory floral candles thoughtfully arranged inside a ribbed ceramic pot with natural dried botanical sprigs. Perfect for creating a calming sanctuary atmosphere.",
-    careTips: [
-      "Burn for at least 2 hours on first burn to ensure an even wax pool.",
-      "Avoid placing near open windows or drafts.",
-      "Clean ceramic container gently with a soft cloth."
-    ]
-  },
-  {
-    id: "vrinda-03",
-    name: "Blushing Tulip Candle Vase",
-    category: "Vase Arrangements",
-    price: 1599,
-    originalPrice: 1849,
-    image: "./images/tulip-elegance-vase.jpeg",
-    scentFamily: "Sweet Floral & Citrus",
-    burnTime: "45+ Hours",
-    weight: "390g",
-    dimensions: "17cm H × 11cm W",
-    rating: 4.8,
-    reviewsCount: 42,
-    isBestseller: true,
-    fragrancePyramid: {
-      top: "Pink Peach & Sweet Grapefruit",
-      heart: "Blushing Tulip & Gardenia",
-      base: "Soft Sandalwood & Creamy Musk"
-    },
-    materials: "Hand-poured Soy & Coconut Wax, Natural Cotton Wick, Ribbed Porcelain Vessel",
-    vessel: "Artisanal Ribbed Ceramic Pot",
-    occasions: ["Birthday Gifts", "Brunch Decor", "Spring Interiors"],
-    description: "Carved tulip candle blooms in vibrant rose pink and warm ivory cream, nestled into a scalloped ceramic vase with golden wheat grass accents. Infuses any room with uplifting peach and tulip nectar.",
-    careTips: [
+      "Place upright in a heat-resistant tray when burning.",
       "Trim wicks to 5mm before every burn session.",
-      "Do not burn for longer than 4 hours continuously.",
-      "Always keep on a flat, stable surface."
+      "Keep out of direct sunlight when displayed as home decor."
     ]
   },
   {
-    id: "vrinda-04",
-    name: "Classic Rose & Botanical Candle Pot",
-    category: "Vase Arrangements",
-    price: 1499,
-    originalPrice: 1750,
-    image: "./images/classic-rose-blossom-vase.jpeg",
-    scentFamily: "Romantic Rose & Amber",
-    burnTime: "48+ Hours",
-    weight: "400g",
-    dimensions: "16cm H × 12cm W",
+    id: "vrinda-cat-02",
+    name: "Peony bloom",
+    category: "Individual Blooms",
+    price: 120,
+    priceLabel: "₹120 each",
+    originalPrice: 150,
+    image: "./images/peony-bloom.jpeg",
+    scentFamily: "Warm Sweet",
+    defaultScent: "Vanilla",
+    burnTime: "18-22 Hours",
+    dimensions: "8cm H × 8cm W",
     rating: 4.9,
-    reviewsCount: 51,
-    isBestseller: false,
-    fragrancePyramid: {
-      top: "Bergamot & English Damask Rose",
-      heart: "Carnation Blossom & Creamy Lily",
-      base: "Golden Amber & Cashmere Wood"
-    },
-    materials: "100% Eco-Friendly Soy Wax, Dried Preserved Flowers, Ribbed Ceramic Pot",
-    vessel: "White Ceramic Ribbed Urn",
-    occasions: ["Reading Nook Decor", "Intimate Gifting", "Thank You Gift"],
-    description: "A timeless floral arrangement made of individually molded rose and chrysanthemum wax candles in tones of dusty rose and champagne. Styled effortlessly atop your favorite coffee table books.",
-    careTips: [
-      "Always burn within sight and keep away from pets and children.",
-      "Keep the wax pool free of wick trimmings and debris."
-    ]
-  },
-  {
-    id: "vrinda-05",
-    name: "VRINDA Luxury Rose Bloom Gift Box",
-    category: "Gift Sets",
-    price: 2199,
-    originalPrice: 2599,
-    image: "./images/luxury-rose-bloom-gift-box.jpeg",
-    scentFamily: "Warm Vanilla & Rose",
-    burnTime: "30+ Hours per Candle (120+ Total)",
-    weight: "520g Total",
-    dimensions: "Gift Box: 20cm × 20cm × 8cm",
-    rating: 5.0,
-    reviewsCount: 64,
+    reviewsCount: 62,
+    isCatalogueOfficial: true,
     isBestseller: true,
     fragrancePyramid: {
-      top: "Madagascar Vanilla & Sweet Almond",
-      heart: "Rich Rose Petals & Magnolia",
-      base: "Tonka Bean & Pure Honey"
+      top: "Peony Petals & Saffron Bloom",
+      heart: "Velvet Rose & Vanilla",
+      base: "Creamy Tonka & Sheer Amber"
     },
-    materials: "Hand-carved Soy Wax Petals, Cotton Wicks, Window Gift Box, Vrinda Gold Card",
-    vessel: "Window Display Gift Packaging with Shredded Kraft Bedding",
-    occasions: ["Corporate Gifting", "Bridal Shower", "Festive Celebrations", "Milestones"],
-    description: "VRINDA's flagship luxury gift box presenting four intricately sculpted garden rose wax candles in vibrant rose, blush pink, and ivory. Arrives ready to gift with VRINDA signature gold foil embossed greeting card.",
+    materials: "Pure Soy & Beeswax Molded Wax, Cotton Wick, Window Gift Box Packaging",
+    vessel: "Free-standing Molded Floral Candle",
+    occasions: ["Party Favors", "Bridal Shower", "Bedside Decor", "Gifting"],
+    description: "A delicate peony-shaped candle, crafted to add a graceful floral accent to your home or gifting moments.",
     careTips: [
-      "Can be burned individually or placed as scented room decor.",
-      "Store in a cool dry place to preserve fragrance strength."
+      "Always burn on a flat, heat-safe dish.",
+      "Keep away from direct drafts and breezy windows."
+    ]
+  },
+  {
+    id: "vrinda-cat-03",
+    name: "Blush Bloom jar",
+    category: "Vase & Jar Arrangements",
+    price: 349,
+    originalPrice: 420,
+    image: "./images/blush-bloom-jar.jpeg",
+    scentFamily: "Romantic Musk",
+    defaultScent: "Rose Musk",
+    burnTime: "45+ Hours",
+    dimensions: "16cm H × 11cm W",
+    rating: 5.0,
+    reviewsCount: 54,
+    isCatalogueOfficial: true,
+    isBestseller: true,
+    fragrancePyramid: {
+      top: "Rose Musk & Orchid Nectar",
+      heart: "Garden Peony & White Tea",
+      base: "Sandalwood & Soft Vanilla"
+    },
+    materials: "Hand-poured Botanical Soy Wax, Dried Wheat Grass Sprigs, Ribbed Ceramic Jar",
+    vessel: "White Ribbed Fluted Ceramic Jar",
+    occasions: ["Home Interiors", "Centerpieces", "Housewarming", "Luxury Gifting"],
+    description: "A charming arrangement of handcrafted floral candles, beautifully styled in a ribbed jar for an elegant touch of décor and gifting.",
+    careTips: [
+      "Burn for 2 hours on first lit session for an even wax pool.",
+      "Trim wick to 1/4 inch before relighting."
+    ]
+  },
+  {
+    id: "vrinda-cat-04",
+    name: "Signature tulip",
+    category: "Vase & Jar Arrangements",
+    price: 499,
+    originalPrice: 599,
+    image: "./images/signature-tulip-arrangement.jpeg",
+    scentFamily: "Fresh Floral",
+    defaultScent: "Jasmine",
+    burnTime: "55+ Hours",
+    dimensions: "18cm H × 13cm W",
+    rating: 5.0,
+    reviewsCount: 81,
+    isCatalogueOfficial: true,
+    isBestseller: true,
+    fragrancePyramid: {
+      top: "Fresh Jasmine & Lemongrass",
+      heart: "Blushing Tulip & Rose Petals",
+      base: "Earthy Sandalwood & Jovan Musk"
+    },
+    materials: "Artisanal Sculpted Tulip Wax Stems, Dried Botanical Accents, Fluted Ceramic Pot",
+    vessel: "Artisanal White Ribbed Ceramic Pot",
+    occasions: ["Luxury Gifting", "Dining Decor", "Weddings", "Special Occasions"],
+    description: "An elegant tulip candle arrangement designed to bring a soft floral touch to your space or make a thoughtful gift.",
+    careTips: [
+      "Keep wax pool clean of match heads or wick debris.",
+      "Dust gently with a soft dry brush when used for decor."
     ]
   }
 ];
@@ -147,15 +158,14 @@ export const PRODUCTS = [
 export const CATEGORIES = [
   "All",
   "Candle Bouquets",
-  "Vase Arrangements",
-  "Gift Sets"
+  "Individual Blooms",
+  "Vase & Jar Arrangements"
 ];
 
 export const SCENT_FAMILIES = [
   "All Scents",
-  "Floral & Fresh",
-  "Relaxing Herbal",
-  "Sweet Floral & Citrus",
-  "Romantic Rose & Amber",
-  "Warm Vanilla & Rose"
+  "Classic Floral",
+  "Warm Sweet",
+  "Romantic Musk",
+  "Fresh Floral"
 ];
