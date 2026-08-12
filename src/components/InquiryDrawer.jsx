@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, Trash2, MessageCircle, Send, ShoppingBag, Sparkles, Check } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { STUDIO_INFO } from '../data/products';
 
 export default function InquiryDrawer({ isOpen, onClose, cartItems, onUpdateQuantity, onRemoveItem, onClearCart }) {
   const [customNote, setCustomNote] = useState('');
@@ -8,25 +9,37 @@ export default function InquiryDrawer({ isOpen, onClose, cartItems, onUpdateQuan
 
   if (!isOpen) return null;
 
+  const totalAmount = cartItems.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
+
   const formatOrderText = () => {
-    let text = `*VRINDA PRODUCT INQUIRY CATALOG LIST*\n\n`;
+    let text = `*VRINDA CANDLE ORDER & INQUIRY*\n`;
+    text += `------------------------------------\n\n`;
+
     cartItems.forEach((item, index) => {
       text += `${index + 1}. *${item.product.name}*\n`;
+      text += `   - Price: ₹${item.product.price} ${item.product.priceLabel ? `(${item.product.priceLabel})` : ''}\n`;
       text += `   - Quantity: ${item.quantity}\n`;
+      if (item.product.selectedFragrance) {
+        text += `   - Fragrance: ${item.product.selectedFragrance}\n`;
+      }
+      if (item.product.selectedColor) {
+        text += `   - Colour: ${item.product.selectedColor}\n`;
+      }
       text += `   - Category: ${item.product.category}\n\n`;
     });
 
+    text += `*Estimated Subtotal:* ₹${totalAmount}\n\n`;
+
     if (customNote.trim()) {
-      text += `*Custom Request / Gift Note:* ${customNote.trim()}\n\n`;
+      text += `*Custom Request / Note:* ${customNote.trim()}\n\n`;
     }
-    text += `Hi Vrinda! Could you please share availability and pricing details for these catalog items? Thank you!`;
+    text += `Hi Vrinda! I would like to check availability and place an order for these items. Thank you!`;
     return text;
   };
 
   const handleSendWhatsApp = () => {
     if (cartItems.length === 0) return;
 
-    // Trigger confetti celebration!
     confetti({
       particleCount: 80,
       spread: 70,
@@ -34,7 +47,7 @@ export default function InquiryDrawer({ isOpen, onClose, cartItems, onUpdateQuan
     });
 
     const text = encodeURIComponent(formatOrderText());
-    window.open(`https://wa.me/?text=${text}`, '_blank');
+    window.open(`https://wa.me/${STUDIO_INFO.whatsappNumber}?text=${text}`, '_blank');
   };
 
   const handleCopySummary = () => {
@@ -59,7 +72,7 @@ export default function InquiryDrawer({ isOpen, onClose, cartItems, onUpdateQuan
             <div className="flex items-center gap-2">
               <ShoppingBag className="w-5 h-5 text-[#C5A059]" />
               <h2 className="font-serif text-xl font-semibold text-[#2C2A29]">
-                Your Catalog Inquiry List ({cartItems.reduce((a, b) => a + b.quantity, 0)})
+                Your Order Inquiry List ({cartItems.reduce((a, b) => a + b.quantity, 0)})
               </h2>
             </div>
             <button
@@ -78,17 +91,17 @@ export default function InquiryDrawer({ isOpen, onClose, cartItems, onUpdateQuan
                   <Sparkles className="w-8 h-8" />
                 </div>
                 <h3 className="font-serif text-lg font-semibold text-[#2C2A29]">
-                  Your catalog inquiry list is empty
+                  Your inquiry list is empty
                 </h3>
                 <p className="text-xs text-[#8E8781] max-w-xs mx-auto">
-                  Browse our handcrafted candles and bouquets to select items for your inquiry.
+                  Browse our handcrafted candle collection to select items for your inquiry.
                 </p>
               </div>
             ) : (
               cartItems.map((item) => (
                 <div
                   key={item.product.id}
-                  className="flex gap-4 p-3 rounded-2xl bg-[#FAF7F2] border border-[#EBE4DA] relative group"
+                  className="flex gap-4 p-3.5 rounded-2xl bg-[#FAF7F2] border border-[#EBE4DA] relative group"
                 >
                   <img
                     src={item.product.image}
@@ -110,9 +123,21 @@ export default function InquiryDrawer({ isOpen, onClose, cartItems, onUpdateQuan
                           <Trash2 className="w-3.5 h-3.5" />
                         </button>
                       </div>
-                      <span className="text-[11px] text-[#9E4770] font-medium block mt-0.5">
-                        {item.product.scentFamily}
-                      </span>
+                      
+                      <div className="flex items-baseline gap-2 mt-0.5">
+                        <span className="font-serif text-sm font-bold text-[#C5A059]">
+                          ₹{item.product.price * item.quantity}
+                        </span>
+                        <span className="text-[10px] text-[#8E8781]">
+                          (₹{item.product.price} each)
+                        </span>
+                      </div>
+
+                      {item.product.selectedFragrance && (
+                        <span className="text-[10px] text-[#9E4770] font-medium block">
+                          Scent: {item.product.selectedFragrance}
+                        </span>
+                      )}
                     </div>
 
                     <div className="flex items-center justify-between mt-2">
@@ -147,10 +172,16 @@ export default function InquiryDrawer({ isOpen, onClose, cartItems, onUpdateQuan
           {cartItems.length > 0 && (
             <div className="p-6 border-t border-[#EBE4DA] bg-[#FFFDF9] space-y-4">
               
+              {/* Estimated Total */}
+              <div className="flex items-center justify-between py-1 border-b border-[#EBE4DA]">
+                <span className="text-xs uppercase font-bold text-[#605B56]">Estimated Total:</span>
+                <span className="font-serif text-xl font-bold text-[#C5A059]">₹{totalAmount}</span>
+              </div>
+
               {/* Custom Note Input */}
               <div>
                 <label className="block text-[11px] font-semibold text-[#2C2A29] uppercase tracking-wider mb-1">
-                  Custom Request or Gift Message
+                  Custom Fragrance / Gift Message
                 </label>
                 <textarea
                   rows={2}
@@ -162,18 +193,18 @@ export default function InquiryDrawer({ isOpen, onClose, cartItems, onUpdateQuan
               </div>
 
               {/* Action Buttons */}
-              <div className="space-y-2 pt-2">
+              <div className="space-y-2 pt-1">
                 <button
                   onClick={handleSendWhatsApp}
                   className="w-full py-3.5 px-4 rounded-xl bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all"
                 >
                   <MessageCircle className="w-4 h-4 fill-white" />
-                  Send Catalog Inquiry via WhatsApp
+                  Send Inquiry via WhatsApp ({STUDIO_INFO.phoneMasked})
                 </button>
 
                 <button
                   onClick={handleCopySummary}
-                  className="w-full py-2.5 px-4 rounded-xl border border-[#E2D1B2] bg-white text-[#605B56] hover:text-[#2C2A29] hover:bg-[#FAF7F2] font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all"
+                  className="w-full py-2.5 px-4 rounded-xl border border-[#E2D1B2] bg-[#FAF7F2] text-[#605B56] hover:text-[#2C2A29] hover:bg-[#F6F1E7] font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all"
                 >
                   {copied ? (
                     <>

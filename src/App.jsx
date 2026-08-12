@@ -3,12 +3,14 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ProductCard from './components/ProductCard';
 import ProductModal from './components/ProductModal';
+import FragranceCustomizer from './components/FragranceCustomizer';
 import InquiryDrawer from './components/InquiryDrawer';
 import CandleCare from './components/CandleCare';
+import CustomOrders from './components/CustomOrders';
 import Footer from './components/Footer';
 
-import { PRODUCTS, CATEGORIES, SCENT_FAMILIES } from './data/products';
-import { RotateCcw } from 'lucide-react';
+import { PRODUCTS, CATEGORIES, SCENT_FAMILIES, STUDIO_INFO } from './data/products';
+import { RotateCcw, Sparkles, FileText, Download } from 'lucide-react';
 
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -104,14 +106,27 @@ export default function App() {
       <main id="catalog-section" className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 w-full">
         
         {/* Section Header */}
-        <div className="mb-8 pb-6 border-b border-[#EBE4DA]">
-          <span className="badge-gold mb-2 inline-block">VRINDA Collection</span>
-          <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-[#2C2A29]">
-            Handcrafted Product Catalog
-          </h2>
-          <p className="text-xs sm:text-sm text-[#605B56] mt-1 font-light">
-            Explore {filteredProducts.length} botanical candle creations
-          </p>
+        <div className="mb-8 pb-6 border-b border-[#EBE4DA] flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <span className="badge-gold mb-2 inline-block">Official Studio Catalogue</span>
+            <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-[#2C2A29]">
+              Handcrafted Product Collection
+            </h2>
+            <p className="text-xs sm:text-sm text-[#605B56] mt-1 font-light">
+              Explore {filteredProducts.length} botanical candle creations handcrafted in {STUDIO_INFO.location}
+            </p>
+          </div>
+
+          <a
+            href="./CATALOGUE.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 rounded-xl bg-white border border-[#EBE4DA] hover:border-[#C5A059] text-[#2C2A29] text-xs font-semibold flex items-center gap-2 shadow-xs transition-all w-fit"
+          >
+            <FileText className="w-4 h-4 text-[#C5A059]" />
+            <span>View PDF Catalogue</span>
+            <Download className="w-3.5 h-3.5 text-[#8E8781]" />
+          </a>
         </div>
 
         {/* Filter Toolbar (Category Pills & Scent Profile Selector) */}
@@ -189,8 +204,14 @@ export default function App() {
 
       </main>
 
+      {/* Interactive Fragrance & Colour Palette Customizer Section (Catalogue Page 8) */}
+      <FragranceCustomizer />
+
       {/* Candle Care Guide Section */}
       <CandleCare />
+
+      {/* Custom Bespoke & Event Orders Section */}
+      <CustomOrders />
 
       {/* Footer */}
       <Footer />

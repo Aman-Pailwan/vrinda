@@ -1,5 +1,29 @@
+# Dependencies
 node_modules
-.DS_Store
+.pnpm-store
+
+# Production build outputs
 dist
 dist-ssr
+build
+
+# Environment & local overrides
 *.local
+.env.local
+.env.*.local
+
+# Temp extracted PDF inspection assets
+pdf_extracted/
+
+# Raw large catalogue & temporary uploads
+CATALOGUE.pdf
+public/CATALOGUE.pdf
+WhatsApp Image *.jpeg
+WhatsApp Image *.jpg
+WhatsApp Image *
+
+# Editor & OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
