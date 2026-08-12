@@ -27,7 +27,7 @@ export default function Navbar({
               <MapPin className="w-3 h-3" /> {STUDIO_INFO.location}
             </span>
             <span className="hidden sm:inline text-[#A8A29E]">|</span>
-            <span className="hidden sm:inline text-[#A8A29E]">Handcrafted Botanical Candle Studio</span>
+            <span className="hidden sm:inline text-[#A8A29E]">Handcrafted Candle Studio</span>
           </div>
 
           <div className="flex items-center gap-4">

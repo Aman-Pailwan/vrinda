@@ -82,7 +82,7 @@ export default function Footer() {
 
         {/* Bottom Copyright Row */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-[#A8A29E] gap-4">
-          <p>© {new Date().getFullYear()} {STUDIO_INFO.name} Botanical Candle Studio ({STUDIO_INFO.location}). All rights reserved.</p>
+          <p>© {new Date().getFullYear()} {STUDIO_INFO.name} Candle Studio ({STUDIO_INFO.location}). All rights reserved.</p>
           <div className="flex items-center gap-1">
             <span>Handcrafted with</span>
             <Heart className="w-3.5 h-3.5 fill-[#9E4770] text-[#9E4770]" />

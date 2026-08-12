@@ -1,6 +1,6 @@
 export const STUDIO_INFO = {
   name: "VRINDA",
-  tagline: "Botanical Candle Studio",
+  tagline: "Candle Studio",
   about: "At Vrinda, we create handcrafted candles that bring together fragrance, artistry and thoughtful gifting. From delicate floral candles to elegant arrangements, every piece is thoughtfully made to add warmth to your space and meaning to your moments.",
   instagram: "vrinda.candle.studio",
   instagramUrl: "https://www.instagram.com/vrinda.candle.studio",
